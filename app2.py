@@ -4,7 +4,11 @@ import numpy as np
 import pickle
 
 # ==================== LOAD MODEL ==================== #
-svc = pickle.load(open("Model/svc.pkl", "rb"))
+import pickle
+import os
+
+model_path = os.path.join(os.path.dirname(__file__), "Model", "svc.pkl")
+svc = pickle.load(open(model_path, "rb"))
 
 # ==================== LOAD DATASETS ==================== #
 sym_des = pd.read_csv("Dataset/symtoms_df.csv")
